@@ -2,6 +2,7 @@
 session_start();
 include('Aportaciones.php');
 $ap = new Aportaciones();
+$err = isset($_GET['error'])? $_GET['error']:null;
 $id_actualizar;
 $correo;
 

@@ -9,6 +9,8 @@ if($_POST)
       define('DB_PASS','{$_POST['txtPassword']}');?> ";
     file_put_contents("config.php",$informacion);
       $cn = mysqli_connect($_POST['txtservidor'],$_POST['txtUsuario'],$_POST['txtPassword']);
+	 if($cn)
+	 {
 	  $sql = "CREATE DATABASE {$_POST['txtdb']}; \n";
 	  
 	  $es=mysqli_query($cn,$sql);
@@ -50,6 +52,13 @@ if($_POST)
   $es3=mysqli_query($cn,$sql3);
    
    echo"<script>window.location='signup.php'</script>";
+ }
+ else{
+	 
+	  echo"<script>window.location='intalador_error.php'</script>";
+	 
+ }
+	 
    
 }
 
