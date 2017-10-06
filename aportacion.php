@@ -1,11 +1,11 @@
 <?php
 include('Aportaciones.php');
+$aport = new Aportaciones();
 $Estado = false;
 if($_POST){
 	
 	if($_POST['txtid']=="")
 	{
-	$aport = new Aportaciones();
 	$aport->empresa=$_POST['txtnombre'];
 	$aport->rnc=$_POST['txtrnc'];
 	$aport->color=$_POST['txtcolor'];
@@ -16,12 +16,10 @@ if($_POST){
 	$aport->comentario=$_POST['txtcomentario'];
 	$aport->correo_usuario=$_POST['txtcorreo'];
 	
-	$aport->guardar_aportacion();
-	$Estado=true;
+	$Estado=$aport->guardar_aportacion();
 	}
 	else {
 	
-	$aport = new Aportaciones();
 	$aport->empresa=$_POST['txtnombre'];
 	$aport->rnc=$_POST['txtrnc'];
 	$aport->color=$_POST['txtcolor'];
@@ -32,10 +30,8 @@ if($_POST){
 	$aport->comentario=$_POST['txtcomentario'];
 	$aport->correo_usuario=$_POST['txtcorreo'];
 	
-	$aport->actualizar_aporto($_POST['txtid']);
-	$Estado=true;
+	$Estado=$aport->actualizar_aporto($_POST['txtid']);
 	
-	  
 	}
 }
 else{

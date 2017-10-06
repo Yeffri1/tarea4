@@ -1,5 +1,6 @@
 <?php
 include('config.php');
+
 class conexion{
 	
 	public $instancia = null;
@@ -17,7 +18,7 @@ class conexion{
 	}
 	static $obj_con=null;
 	
-	static function obj()
+	public static function obj()
 	{
 		if(self::$obj_con==null)
 		{

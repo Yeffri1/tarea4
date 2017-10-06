@@ -29,11 +29,11 @@ $correo;
 					<?php
 					if($err==1)
 					{
-						echo "Usuario o contraseña incorrecto";
+						echo "<h1>Usuario o contraseña incorrecto</h1>";
 					}
 					else if($err==2)
 					{
-						echo "Debes iniciar seccion";
+						echo "<h1>Debes iniciar seccion</h1>";
 					}
 					
 					
